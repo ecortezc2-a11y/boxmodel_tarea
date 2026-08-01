@@ -1,0 +1,19 @@
+/*=====================================
+ COMPUTADORA (≥ 1024px)
+=====================================*/
+@media screen and (min-width: 1024px) {
+ nav ul {
+ display: flex;
+ justify-content: center;
+ gap: 30px;
+ }
+ .product-grid {
+ display: grid;
+ /* Cambiamos a 6 columnas para que entren todos en una sola fila */
+ grid-template-columns: repeat(6, 1fr);
+ gap: 15px; /* Reducimos un poco el espacio entre tarjetas */
+ padding: 20px;
+ max-width: 100%; /* Aumentamos el ancho máximo para que no se aprieten */
+ margin: 0 auto;
+ }
+}

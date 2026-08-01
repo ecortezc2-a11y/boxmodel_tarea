@@ -1,0 +1,236 @@
+/* VARIABLES DE COLOR */
+:root {
+    --rosa-pastel: #fce7f3;
+    --rosa-borde: #fbcfe8;
+    --rosa-fucsia: #db2777;
+    --chocolate: #5c3d2e;
+    --fondo-body: #fff5f8;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fondo-body);
+    color: #4a4a4a;
+}
+
+/* HEADER Y LOGO */
+header {
+    background-color: var(--rosa-pastel);
+    text-align: center;
+    padding: 25px 20px;
+    border-bottom: 2px solid var(--rosa-borde);
+    width: 100%;
+}
+
+header .logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 30px;
+    color: var(--rosa-fucsia);
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #705860;
+    font-size: 15px;
+}
+
+/* NAVEGACIÓN */
+nav {
+    background-color: var(--rosa-fucsia);
+    padding: 12px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+/* TODOS los botones del menú tienen borde blanco redondeado */
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 2px solid #ffffff; /* Borde blanco para todos */
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: var(--blanco);
+    color: var(--rosa-fucsia);
+}
+
+/* CONTENEDOR DE PRODUCTOS (.product-grid) */
+.product-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* TARJETAS DE PRODUCTO (.product) */
+.product {
+    background: var(--blanco);
+    border: 1px solid var(--rosa-borde);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(219, 39, 119, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(219, 39, 119, 0.12);
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.product h3 {
+    font-size: 18px;
+    color: var(--rosa-fucsia);
+    margin-bottom: 8px;
+}
+
+.product p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.product .precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--chocolate);
+    margin-bottom: 15px;
+}
+
+/* BOTÓN DE COMPRA */
+.btn-carrito {
+    width: 100%;
+    background-color: var(--chocolate);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+.btn-carrito:hover {
+    background-color: #3d271d;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 14px;
+    background-color: var(--fondo-body);
+    margin-top: 20px;
+}
+
+/* =====================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+===================================== */
+
+/* MÓVIL (< 767px): 1 columna */
+@media screen and (max-width: 767px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+/* TABLET (768px - 1023px): 2 columnas */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+    }
+}
+
+/* COMPUTADORA (≥ 1024px): 6 columnas en una sola fila */
+@media screen and (min-width: 1024px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        padding: 20px 10px;
+        max-width: 100%;
+    }
+
+    /* Ajustes visuales para que entren bien las 6 tarjetas */
+    .product {
+        padding: 12px 8px;
+    }
+
+    .product img {
+        height: 110px;
+    }
+
+    .product h3 {
+        font-size: 15px;
+    }
+
+    .product p {
+        font-size: 11px;
+    }
+
+    .product .precio {
+        font-size: 16px;
+    }
+
+    .btn-carrito {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
